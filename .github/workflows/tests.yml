@@ -1,0 +1,21 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run Phase 1 tests
+        run: python -m pytest tests/phase-1 -v
