@@ -1,0 +1,356 @@
+{
+  "summary": {
+    "source_file": "saft_sample.xml",
+    "saft_version": "1.30",
+    "company_name": "Testtaxi Demo AS",
+    "company_registration_number": "999999999",
+    "period": {
+      "start": "1",
+      "start_year": "2025",
+      "end": "12",
+      "end_year": "2025"
+    },
+    "counts": {
+      "accounts": 10,
+      "vat_codes": 6,
+      "suppliers": 8,
+      "mapped_suppliers": 4,
+      "unknown_mappings": 4,
+      "transactions": 19,
+      "supplier_invoices": 16
+    },
+    "unknown_values": {
+      "accounts": 1,
+      "vat_codes": 3,
+      "suppliers": 4,
+      "supplier_account_map": 10
+    },
+    "skipped": [
+      "Account without AccountID (description: Konto uten nummer)"
+    ],
+    "warnings": [
+      "SupplierID 50099 used in GeneralLedgerEntries but not in MasterFiles"
+    ]
+  },
+  "accounts": [
+    {
+      "id": "1930",
+      "description": "Bedriftskonto",
+      "standard_account_id": "19"
+    },
+    {
+      "id": "2400",
+      "description": "Leverandørgjeld",
+      "standard_account_id": "24"
+    },
+    {
+      "id": "2710",
+      "description": "Inngående merverdiavgift",
+      "standard_account_id": "27"
+    },
+    {
+      "id": "3000",
+      "description": "Salgsinntekt",
+      "standard_account_id": "30"
+    },
+    {
+      "id": "7026",
+      "description": "Reparasjoner",
+      "standard_account_id": "70"
+    },
+    {
+      "id": "7027",
+      "description": "Forsikring",
+      "standard_account_id": "70"
+    },
+    {
+      "id": "7033",
+      "description": "Drivstoff",
+      "standard_account_id": "70"
+    },
+    {
+      "id": "7155",
+      "description": "Bespisning/Mat",
+      "standard_account_id": "71"
+    },
+    {
+      "id": "7161",
+      "description": "Parkering",
+      "standard_account_id": "71"
+    },
+    {
+      "id": "7770",
+      "description": "unknown",
+      "standard_account_id": "77"
+    }
+  ],
+  "vat_codes": [
+    {
+      "code": "",
+      "percentage": 0,
+      "description": "Ingen mva-kode (blank)",
+      "standard_tax_code": "unknown",
+      "effective_date": null,
+      "expiration_date": null,
+      "source": "implicit"
+    },
+    {
+      "code": "2",
+      "percentage": 25,
+      "description": "Inngående mva, høy sats",
+      "standard_tax_code": "1",
+      "effective_date": null,
+      "expiration_date": null,
+      "source": "tax_table"
+    },
+    {
+      "code": "11",
+      "percentage": 15,
+      "description": "Inngående mva, middels sats",
+      "standard_tax_code": "11",
+      "effective_date": null,
+      "expiration_date": null,
+      "source": "tax_table"
+    },
+    {
+      "code": "12",
+      "percentage": 10,
+      "description": "Inngående mva, lav sats (midlertidig)",
+      "standard_tax_code": "13",
+      "effective_date": "2020-04-01",
+      "expiration_date": "2021-09-30",
+      "source": "tax_table"
+    },
+    {
+      "code": "12",
+      "percentage": 12,
+      "description": "Inngående mva, lav sats",
+      "standard_tax_code": "13",
+      "effective_date": "2021-10-01",
+      "expiration_date": null,
+      "source": "tax_table"
+    },
+    {
+      "code": "99",
+      "percentage": "unknown",
+      "description": "Ukjent sats",
+      "standard_tax_code": "unknown",
+      "effective_date": null,
+      "expiration_date": null,
+      "source": "tax_table"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "50001",
+      "name": "NIO",
+      "registration_number": "911111119",
+      "in_master_data": true
+    },
+    {
+      "id": "50002",
+      "name": "ONEPARK",
+      "registration_number": "922222228",
+      "in_master_data": true
+    },
+    {
+      "id": "50003",
+      "name": "RA FORSIKRING",
+      "registration_number": "933333337",
+      "in_master_data": true
+    },
+    {
+      "id": "50004",
+      "name": "AMBI SERVICE",
+      "registration_number": "944444446",
+      "in_master_data": true
+    },
+    {
+      "id": "50005",
+      "name": "SPLITT AS",
+      "registration_number": "955555555",
+      "in_master_data": true
+    },
+    {
+      "id": "50006",
+      "name": "NEVER BOOKED AS",
+      "registration_number": "966666664",
+      "in_master_data": true
+    },
+    {
+      "id": "50007",
+      "name": "unknown",
+      "registration_number": "unknown",
+      "in_master_data": true
+    },
+    {
+      "id": "50099",
+      "name": "unknown",
+      "registration_number": "unknown",
+      "in_master_data": false
+    }
+  ],
+  "supplier_account_map": [
+    {
+      "supplier_id": "50001",
+      "supplier_name": "NIO",
+      "account_id": "7033",
+      "account_description": "Drivstoff",
+      "share": 0.8,
+      "invoice_count": 5,
+      "candidates": [
+        {
+          "account_id": "7033",
+          "account_description": "Drivstoff",
+          "invoice_count": 4,
+          "share": 0.8
+        },
+        {
+          "account_id": "7026",
+          "account_description": "Reparasjoner",
+          "invoice_count": 1,
+          "share": 0.2
+        }
+      ],
+      "reason": null,
+      "vat_codes_seen": [
+        "2"
+      ]
+    },
+    {
+      "supplier_id": "50002",
+      "supplier_name": "ONEPARK",
+      "account_id": "7161",
+      "account_description": "Parkering",
+      "share": 1,
+      "invoice_count": 3,
+      "candidates": [
+        {
+          "account_id": "7161",
+          "account_description": "Parkering",
+          "invoice_count": 3,
+          "share": 1
+        }
+      ],
+      "reason": null,
+      "vat_codes_seen": [
+        "",
+        "2"
+      ]
+    },
+    {
+      "supplier_id": "50003",
+      "supplier_name": "RA FORSIKRING",
+      "account_id": "7027",
+      "account_description": "Forsikring",
+      "share": 1,
+      "invoice_count": 2,
+      "candidates": [
+        {
+          "account_id": "7027",
+          "account_description": "Forsikring",
+          "invoice_count": 2,
+          "share": 1
+        }
+      ],
+      "reason": null,
+      "vat_codes_seen": [
+        ""
+      ]
+    },
+    {
+      "supplier_id": "50004",
+      "supplier_name": "AMBI SERVICE",
+      "account_id": "unknown",
+      "account_description": "unknown",
+      "share": null,
+      "invoice_count": 3,
+      "candidates": [
+        {
+          "account_id": "7026",
+          "account_description": "Reparasjoner",
+          "invoice_count": 2,
+          "share": 0.667
+        },
+        {
+          "account_id": "7155",
+          "account_description": "Bespisning/Mat",
+          "invoice_count": 1,
+          "share": 0.333
+        }
+      ],
+      "reason": "ambiguous history",
+      "vat_codes_seen": [
+        "2"
+      ]
+    },
+    {
+      "supplier_id": "50005",
+      "supplier_name": "SPLITT AS",
+      "account_id": "unknown",
+      "account_description": "unknown",
+      "share": null,
+      "invoice_count": 2,
+      "candidates": [
+        {
+          "account_id": "7026",
+          "account_description": "Reparasjoner",
+          "invoice_count": 2,
+          "share": 1
+        },
+        {
+          "account_id": "7155",
+          "account_description": "Bespisning/Mat",
+          "invoice_count": 2,
+          "share": 1
+        }
+      ],
+      "reason": "multiple accounts on the same invoices",
+      "vat_codes_seen": [
+        "2"
+      ]
+    },
+    {
+      "supplier_id": "50006",
+      "supplier_name": "NEVER BOOKED AS",
+      "account_id": "unknown",
+      "account_description": "unknown",
+      "share": null,
+      "invoice_count": 0,
+      "candidates": [],
+      "reason": "no booking history",
+      "vat_codes_seen": []
+    },
+    {
+      "supplier_id": "50007",
+      "supplier_name": "unknown",
+      "account_id": "unknown",
+      "account_description": "unknown",
+      "share": null,
+      "invoice_count": 0,
+      "candidates": [],
+      "reason": "no booking history",
+      "vat_codes_seen": []
+    },
+    {
+      "supplier_id": "50099",
+      "supplier_name": "unknown",
+      "account_id": "7026",
+      "account_description": "Reparasjoner",
+      "share": 1,
+      "invoice_count": 1,
+      "candidates": [
+        {
+          "account_id": "7026",
+          "account_description": "Reparasjoner",
+          "invoice_count": 1,
+          "share": 1
+        }
+      ],
+      "reason": null,
+      "vat_codes_seen": [
+        "2"
+      ]
+    }
+  ]
+}

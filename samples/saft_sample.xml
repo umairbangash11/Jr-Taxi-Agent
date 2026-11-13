@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n1:AuditFile xmlns:n1="urn:StandardAuditFile-Taxation-Financial:NO">
+  <n1:Header>
+    <n1:AuditFileVersion>1.30</n1:AuditFileVersion>
+    <n1:AuditFileCountry>NO</n1:AuditFileCountry>
+    <n1:AuditFileDateCreated>2026-01-15</n1:AuditFileDateCreated>
+    <n1:SoftwareCompanyName>Eksempel Programvare AS</n1:SoftwareCompanyName>
+    <n1:SoftwareID>DemoRegnskap</n1:SoftwareID>
+    <n1:SoftwareVersion>1.0</n1:SoftwareVersion>
+    <n1:Company>
+      <n1:RegistrationNumber>999999999</n1:RegistrationNumber>
+      <n1:Name>Testtaxi Demo AS</n1:Name>
+    </n1:Company>
+    <n1:DefaultCurrencyCode>NOK</n1:DefaultCurrencyCode>
+    <n1:SelectionCriteria>
+      <n1:PeriodStart>1</n1:PeriodStart>
+      <n1:PeriodStartYear>2025</n1:PeriodStartYear>
+      <n1:PeriodEnd>12</n1:PeriodEnd>
+      <n1:PeriodEndYear>2025</n1:PeriodEndYear>
+    </n1:SelectionCriteria>
+    <n1:TaxAccountingBasis>A</n1:TaxAccountingBasis>
+  </n1:Header>
+  <n1:MasterFiles>
+    <n1:GeneralLedgerAccounts>
+      <n1:Account><n1:AccountID>1930</n1:AccountID><n1:AccountDescription>Bedriftskonto</n1:AccountDescription><n1:StandardAccountID>19</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>2400</n1:AccountID><n1:AccountDescription>Leverandørgjeld</n1:AccountDescription><n1:StandardAccountID>24</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>2710</n1:AccountID><n1:AccountDescription>Inngående merverdiavgift</n1:AccountDescription><n1:StandardAccountID>27</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>3000</n1:AccountID><n1:AccountDescription>Salgsinntekt</n1:AccountDescription><n1:StandardAccountID>30</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>7026</n1:AccountID><n1:AccountDescription>Reparasjoner</n1:AccountDescription><n1:StandardAccountID>70</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>7027</n1:AccountID><n1:AccountDescription>Forsikring</n1:AccountDescription><n1:StandardAccountID>70</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>7033</n1:AccountID><n1:AccountDescription>Drivstoff</n1:AccountDescription><n1:StandardAccountID>70</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>7155</n1:AccountID><n1:AccountDescription>Bespisning/Mat</n1:AccountDescription><n1:StandardAccountID>71</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>7161</n1:AccountID><n1:AccountDescription>Parkering</n1:AccountDescription><n1:StandardAccountID>71</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountID>7770</n1:AccountID><n1:StandardAccountID>77</n1:StandardAccountID><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+      <n1:Account><n1:AccountDescription>Konto uten nummer</n1:AccountDescription><n1:AccountType>GL</n1:AccountType><n1:OpeningDebitBalance>0.00</n1:OpeningDebitBalance><n1:ClosingDebitBalance>0.00</n1:ClosingDebitBalance></n1:Account>
+    </n1:GeneralLedgerAccounts>
+    <n1:Suppliers>
+      <n1:Supplier><n1:RegistrationNumber>911111119</n1:RegistrationNumber><n1:Name>NIO</n1:Name><n1:Address><n1:City>Oslo</n1:City><n1:Country>NO</n1:Country></n1:Address><n1:SupplierID>50001</n1:SupplierID><n1:AccountID>2400</n1:AccountID><n1:OpeningCreditBalance>0.00</n1:OpeningCreditBalance><n1:ClosingCreditBalance>0.00</n1:ClosingCreditBalance></n1:Supplier>
+      <n1:Supplier><n1:RegistrationNumber>922222228</n1:RegistrationNumber><n1:Name>ONEPARK</n1:Name><n1:Address><n1:City>Oslo</n1:City><n1:Country>NO</n1:Country></n1:Address><n1:SupplierID>50002</n1:SupplierID><n1:AccountID>2400</n1:AccountID><n1:OpeningCreditBalance>0.00</n1:OpeningCreditBalance><n1:ClosingCreditBalance>0.00</n1:ClosingCreditBalance></n1:Supplier>
+      <n1:Supplier><n1:RegistrationNumber>933333337</n1:RegistrationNumber><n1:Name>RA FORSIKRING</n1:Name><n1:Address><n1:City>Oslo</n1:City><n1:Country>NO</n1:Country></n1:Address><n1:SupplierID>50003</n1:SupplierID><n1:AccountID>2400</n1:AccountID><n1:OpeningCreditBalance>0.00</n1:OpeningCreditBalance><n1:ClosingCreditBalance>0.00</n1:ClosingCreditBalance></n1:Supplier>
+      <n1:Supplier><n1:RegistrationNumber>944444446</n1:RegistrationNumber><n1:Name>AMBI SERVICE</n1:Name><n1:Address><n1:City>Oslo</n1:City><n1:Country>NO</n1:Country></n1:Address><n1:SupplierID>50004</n1:SupplierID><n1:AccountID>2400</n1:AccountID><n1:OpeningCreditBalance>0.00</n1:OpeningCreditBalance><n1:ClosingCreditBalance>0.00</n1:ClosingCreditBalance></n1:Supplier>
+      <n1:Supplier><n1:RegistrationNumber>955555555</n1:RegistrationNumber><n1:Name>SPLITT AS</n1:Name><n1:Address><n1:City>Oslo</n1:City><n1:Country>NO</n1:Country></n1:Address><n1:SupplierID>50005</n1:SupplierID><n1:AccountID>2400</n1:AccountID><n1:OpeningCreditBalance>0.00</n1:OpeningCreditBalance><n1:ClosingCreditBalance>0.00</n1:ClosingCreditBalance></n1:Supplier>
+      <n1:Supplier><n1:RegistrationNumber>966666664</n1:RegistrationNumber><n1:Name>NEVER BOOKED AS</n1:Name><n1:Address><n1:City>Oslo</n1:City><n1:Country>NO</n1:Country></n1:Address><n1:SupplierID>50006</n1:SupplierID><n1:AccountID>2400</n1:AccountID><n1:OpeningCreditBalance>0.00</n1:OpeningCreditBalance><n1:ClosingCreditBalance>0.00</n1:ClosingCreditBalance></n1:Supplier>
+      <n1:Supplier><n1:Address><n1:City>Oslo</n1:City><n1:Country>NO</n1:Country></n1:Address><n1:SupplierID>50007</n1:SupplierID><n1:AccountID>2400</n1:AccountID><n1:OpeningCreditBalance>0.00</n1:OpeningCreditBalance><n1:ClosingCreditBalance>0.00</n1:ClosingCreditBalance></n1:Supplier>
+    </n1:Suppliers>
+    <n1:TaxTable>
+      <n1:TaxTableEntry>
+        <n1:TaxType>MVA</n1:TaxType>
+        <n1:Description>Merverdiavgift</n1:Description>
+        <n1:TaxCodeDetails><n1:TaxCode>2</n1:TaxCode><n1:Description>Inngående mva, høy sats</n1:Description><n1:TaxPercentage>25.00</n1:TaxPercentage><n1:Country>NO</n1:Country><n1:StandardTaxCode>1</n1:StandardTaxCode><n1:BaseRate>100</n1:BaseRate></n1:TaxCodeDetails>
+        <n1:TaxCodeDetails><n1:TaxCode>11</n1:TaxCode><n1:Description>Inngående mva, middels sats</n1:Description><n1:TaxPercentage>15.00</n1:TaxPercentage><n1:Country>NO</n1:Country><n1:StandardTaxCode>11</n1:StandardTaxCode><n1:BaseRate>100</n1:BaseRate></n1:TaxCodeDetails>
+        <n1:TaxCodeDetails><n1:TaxCode>12</n1:TaxCode><n1:EffectiveDate>2020-04-01</n1:EffectiveDate><n1:ExpirationDate>2021-09-30</n1:ExpirationDate><n1:Description>Inngående mva, lav sats (midlertidig)</n1:Description><n1:TaxPercentage>10.00</n1:TaxPercentage><n1:Country>NO</n1:Country><n1:StandardTaxCode>13</n1:StandardTaxCode><n1:BaseRate>100</n1:BaseRate></n1:TaxCodeDetails>
+        <n1:TaxCodeDetails><n1:TaxCode>12</n1:TaxCode><n1:EffectiveDate>2021-10-01</n1:EffectiveDate><n1:Description>Inngående mva, lav sats</n1:Description><n1:TaxPercentage>12.00</n1:TaxPercentage><n1:Country>NO</n1:Country><n1:StandardTaxCode>13</n1:StandardTaxCode><n1:BaseRate>100</n1:BaseRate></n1:TaxCodeDetails>
+        <n1:TaxCodeDetails><n1:TaxCode>99</n1:TaxCode><n1:Description>Ukjent sats</n1:Description><n1:Country>NO</n1:Country><n1:BaseRate>100</n1:BaseRate></n1:TaxCodeDetails>
+      </n1:TaxTableEntry>
+    </n1:TaxTable>
+  </n1:MasterFiles>
+  <n1:GeneralLedgerEntries>
+    <n1:NumberOfEntries>19</n1:NumberOfEntries>
+    <n1:Journal>
+      <n1:JournalID>GL</n1:JournalID>
+      <n1:Description>Hovedbok</n1:Description>
+      <n1:Type>GL</n1:Type>
+      <n1:Transaction>
+        <n1:TransactionID>1001</n1:TransactionID><n1:Period>1</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-01-10</n1:TransactionDate><n1:Description>Faktura 50001</n1:Description><n1:SystemEntryDate>2025-01-10</n1:SystemEntryDate><n1:GLPostingDate>2025-01-10</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7033</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>800.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>200.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50001</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>1000.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1002</n1:TransactionID><n1:Period>2</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-02-10</n1:TransactionDate><n1:Description>Faktura 50001</n1:Description><n1:SystemEntryDate>2025-02-10</n1:SystemEntryDate><n1:GLPostingDate>2025-02-10</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7033</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>810.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>202.50</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50001</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>1012.50</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1003</n1:TransactionID><n1:Period>3</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-03-10</n1:TransactionDate><n1:Description>Faktura 50001</n1:Description><n1:SystemEntryDate>2025-03-10</n1:SystemEntryDate><n1:GLPostingDate>2025-03-10</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7033</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>820.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>205.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50001</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>1025.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1004</n1:TransactionID><n1:Period>4</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-04-10</n1:TransactionDate><n1:Description>Faktura 50001</n1:Description><n1:SystemEntryDate>2025-04-10</n1:SystemEntryDate><n1:GLPostingDate>2025-04-10</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7033</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>830.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>207.50</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50001</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>1037.50</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1005</n1:TransactionID><n1:Period>5</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-05-10</n1:TransactionDate><n1:Description>Faktura 50001</n1:Description><n1:SystemEntryDate>2025-05-10</n1:SystemEntryDate><n1:GLPostingDate>2025-05-10</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7026</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>400.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>100.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50001</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>500.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1006</n1:TransactionID><n1:Period>5</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-05-20</n1:TransactionDate><n1:Description>Betaling NIO</n1:Description><n1:SystemEntryDate>2025-05-20</n1:SystemEntryDate><n1:GLPostingDate>2025-05-20</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50001</n1:SupplierID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>1000.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>1930</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:CreditAmount><n1:Amount>1000.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1007</n1:TransactionID><n1:Period>2</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-02-01</n1:TransactionDate><n1:Description>Faktura 50002</n1:Description><n1:SystemEntryDate>2025-02-01</n1:SystemEntryDate><n1:GLPostingDate>2025-02-01</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7161</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>120.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>30.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50002</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>150.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1008</n1:TransactionID><n1:Period>3</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-03-01</n1:TransactionDate><n1:Description>Faktura 50002</n1:Description><n1:SystemEntryDate>2025-03-01</n1:SystemEntryDate><n1:GLPostingDate>2025-03-01</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7161</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>150.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50002</n1:SupplierID><n1:Description>Linje 2</n1:Description><n1:CreditAmount><n1:Amount>150.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1009</n1:TransactionID><n1:Period>4</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-04-01</n1:TransactionDate><n1:Description>Faktura 50002</n1:Description><n1:SystemEntryDate>2025-04-01</n1:SystemEntryDate><n1:GLPostingDate>2025-04-01</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7161</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>90.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>22.50</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50002</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>112.50</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1010</n1:TransactionID><n1:Period>1</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-01-05</n1:TransactionDate><n1:Description>Faktura 50003</n1:Description><n1:SystemEntryDate>2025-01-05</n1:SystemEntryDate><n1:GLPostingDate>2025-01-05</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7027</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>6000.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50003</n1:SupplierID><n1:Description>Linje 2</n1:Description><n1:CreditAmount><n1:Amount>6000.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1011</n1:TransactionID><n1:Period>7</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-07-05</n1:TransactionDate><n1:Description>Faktura 50003</n1:Description><n1:SystemEntryDate>2025-07-05</n1:SystemEntryDate><n1:GLPostingDate>2025-07-05</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7027</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>6000.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50003</n1:SupplierID><n1:Description>Linje 2</n1:Description><n1:CreditAmount><n1:Amount>6000.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1012</n1:TransactionID><n1:Period>3</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-03-15</n1:TransactionDate><n1:Description>Faktura 50004</n1:Description><n1:SystemEntryDate>2025-03-15</n1:SystemEntryDate><n1:GLPostingDate>2025-03-15</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7026</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>500.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>125.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50004</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>625.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1013</n1:TransactionID><n1:Period>6</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-06-15</n1:TransactionDate><n1:Description>Faktura 50004</n1:Description><n1:SystemEntryDate>2025-06-15</n1:SystemEntryDate><n1:GLPostingDate>2025-06-15</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7026</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>700.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>175.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50004</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>875.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1014</n1:TransactionID><n1:Period>9</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-09-15</n1:TransactionDate><n1:Description>Faktura 50004</n1:Description><n1:SystemEntryDate>2025-09-15</n1:SystemEntryDate><n1:GLPostingDate>2025-09-15</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7155</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>300.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>75.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50004</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>375.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1015</n1:TransactionID><n1:Period>4</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-04-20</n1:TransactionDate><n1:Description>Faktura 50005</n1:Description><n1:SystemEntryDate>2025-04-20</n1:SystemEntryDate><n1:GLPostingDate>2025-04-20</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7026</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>200.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>7155</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>100.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 3</n1:Description><n1:DebitAmount><n1:Amount>75.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>4</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50005</n1:SupplierID><n1:Description>Linje 4</n1:Description><n1:CreditAmount><n1:Amount>375.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1016</n1:TransactionID><n1:Period>8</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-08-20</n1:TransactionDate><n1:Description>Faktura 50005</n1:Description><n1:SystemEntryDate>2025-08-20</n1:SystemEntryDate><n1:GLPostingDate>2025-08-20</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7026</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>250.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>7155</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>80.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 3</n1:Description><n1:DebitAmount><n1:Amount>82.50</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>4</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50005</n1:SupplierID><n1:Description>Linje 4</n1:Description><n1:CreditAmount><n1:Amount>412.50</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1017</n1:TransactionID><n1:Period>10</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-10-01</n1:TransactionDate><n1:Description>Faktura 50099</n1:Description><n1:SystemEntryDate>2025-10-01</n1:SystemEntryDate><n1:GLPostingDate>2025-10-01</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>7026</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>350.00</n1:Amount></n1:DebitAmount><n1:TaxInformation><n1:TaxType>MVA</n1:TaxType><n1:TaxCode>2</n1:TaxCode></n1:TaxInformation></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2710</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:DebitAmount><n1:Amount>87.50</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>3</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50099</n1:SupplierID><n1:Description>Linje 3</n1:Description><n1:CreditAmount><n1:Amount>437.50</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1018</n1:TransactionID><n1:Period>11</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-11-01</n1:TransactionDate><n1:Description>Motregning NIO/ONEPARK</n1:Description><n1:SystemEntryDate>2025-11-01</n1:SystemEntryDate><n1:GLPostingDate>2025-11-01</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50001</n1:SupplierID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>100.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>2400</n1:AccountID><n1:SupplierID>50002</n1:SupplierID><n1:Description>Linje 2</n1:Description><n1:CreditAmount><n1:Amount>100.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+      <n1:Transaction>
+        <n1:TransactionID>1019</n1:TransactionID><n1:Period>11</n1:Period><n1:PeriodYear>2025</n1:PeriodYear><n1:TransactionDate>2025-11-15</n1:TransactionDate><n1:Description>Kjøreinntekter</n1:Description><n1:SystemEntryDate>2025-11-15</n1:SystemEntryDate><n1:GLPostingDate>2025-11-15</n1:GLPostingDate>
+        <n1:Line><n1:RecordID>1</n1:RecordID><n1:AccountID>1930</n1:AccountID><n1:Description>Linje 1</n1:Description><n1:DebitAmount><n1:Amount>15000.00</n1:Amount></n1:DebitAmount></n1:Line>
+        <n1:Line><n1:RecordID>2</n1:RecordID><n1:AccountID>3000</n1:AccountID><n1:Description>Linje 2</n1:Description><n1:CreditAmount><n1:Amount>15000.00</n1:Amount></n1:CreditAmount></n1:Line>
+      </n1:Transaction>
+    </n1:Journal>
+  </n1:GeneralLedgerEntries>
+</n1:AuditFile>

@@ -1,0 +1,12 @@
+OSLO TAXI SENTRAL AS
+Org.nr 912345610 MVA
+Kvittering
+Dato: 2025-06-14   Tid: 22:41
+Løyve: EL 98765
+Fra: Gardermoen
+Til: Majorstuen
+Totalt                    kr 845,00
+Herav mva 12 %            kr 90,54
+Bankkort VISA             kr 845,00
+Ref.nr 004512
+Takk for turen!

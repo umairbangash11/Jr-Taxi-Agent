@@ -8,7 +8,7 @@ description: "Task list template for feature implementation"
 **Input**: Design documents from `/specs/[###-feature-name]/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
-**Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
+**Tests**: Tests are MANDATORY (constitution v1.0.0, phase exit criteria). Every phase includes test tasks in `/tests/phase-N/`, including tests for Principles II–IV where the phase touches them: invented-code rejection, debet = kredit enforcement, bank-account (1930) gating against the bank statement.
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
@@ -20,10 +20,11 @@ description: "Task list template for feature implementation"
 
 ## Path Conventions
 
-- **Single project**: `src/`, `tests/` at repository root
-- **Web app**: `backend/src/`, `frontend/src/`
-- **Mobile**: `api/src/`, `ios/src/` or `android/src/`
-- Paths shown below assume single project - adjust based on plan.md structure
+- **This project (constitution v1.0.0)**: code in `/phase-N/` (the current phase only), shared code in
+  `/shared/`, tests in `/tests/phase-N/`, fake fixtures in `/samples/`. No task may touch another
+  phase's folder.
+- Generic examples (other projects): `src/` + `tests/`; `backend/src/` + `frontend/src/`
+- Sample paths below use `src/` for illustration - replace with `/phase-N/` per plan.md
 
 <!-- 
   ============================================================================

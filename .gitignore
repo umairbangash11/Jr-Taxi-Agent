@@ -1,0 +1,58 @@
+# =====================================================================
+# REAL CLIENT DATA — NEVER COMMIT
+# Strategy: block data file types everywhere, then re-allow ONLY the
+# synthetic test fixtures and the synthetic sample (samples/saft_sample.xml).
+# =====================================================================
+
+# --- Secrets / environment ---
+.env
+.env.*
+!.env.example
+
+# --- Client folders & booked ledger (CLIENTS_ROOT / LEDGER_DB defaults) ---
+data/
+clients/
+client_data/
+real/
+*.db
+*.sqlite
+*.sqlite3
+
+# --- SAF-T XML (real exports from Tripletex/Visma/PowerOffice/Fiken…) ---
+*.xml
+*.XML
+!samples/saft_sample.xml
+!**/tests/fixtures/*.xml
+
+# --- Real output JSON ---
+real.json
+*real*.json
+*_real.json
+newclient_saft.json
+*client*_saft.json
+jr_taxi_config.json
+*_config.local.json
+
+# --- Client documents (invoices, receipts, scans) ---
+*.pdf
+*.PDF
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.webp
+*.heic
+
+# --- Bank exports & spreadsheets ---
+*.csv
+*.xlsx
+*.xls
+!**/tests/fixtures/*.csv
+
+# --- Python / tooling ---
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/

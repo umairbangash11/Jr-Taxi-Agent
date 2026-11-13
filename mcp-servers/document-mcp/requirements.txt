@@ -1,0 +1,7 @@
+mcp>=1.9,<2
+# Optional extraction backends (pdftotext from Git for Windows / poppler also works):
+# pdfplumber
+# pypdf
+# Optional OCR for scans (also needs the Tesseract binary with the 'nor' language pack):
+# pytesseract
+# pypdfium2

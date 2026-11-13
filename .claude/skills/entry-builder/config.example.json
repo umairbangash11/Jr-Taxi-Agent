@@ -1,0 +1,15 @@
+{
+  "_comment": "Copy to jr_taxi_config.json and fill in JR Taxi's real løyver/biler. All keys optional.",
+  "company": "JR Taxi",
+  "payable_account": "2400",
+  "paid_receipt_credit_account": "1920",
+  "loyver": [
+    {"loyve": "L-101", "bil": "EL12345"},
+    {"loyve": "L-102", "bil": "EK54321"}
+  ],
+  "default_loyve": null,
+  "vat_code_by_rate": {},
+  "ignore_account_prefixes": ["27"],
+  "min_mapping_share": 0.6,
+  "review_above_amount": 30000
+}

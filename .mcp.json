@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "saft": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp-servers/saft-mcp/server.py"],
+      "env": {
+        "SAFT_FILE": "${SAFT_FILE:-}"
+      }
+    },
+    "documents": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp-servers/document-mcp/server.py"],
+      "env": {
+        "DOCUMENT_ROOTS": "${DOCUMENT_ROOTS:-}"
+      }
+    },
+    "bank": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp-servers/bank-mcp/server.py"],
+      "env": {
+        "BANK_FILE": "${BANK_FILE:-}",
+        "BANK_ROOTS": "${BANK_ROOTS:-}"
+      }
+    },
+    "reconcile": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp-servers/reconcile-mcp/server.py"],
+      "env": {
+        "SAFT_FILE": "${SAFT_FILE:-}",
+        "BANK_FILE": "${BANK_FILE:-}",
+        "RECONCILE_ACCOUNT": "${RECONCILE_ACCOUNT:-1920}",
+        "RECONCILE_ROOTS": "${RECONCILE_ROOTS:-}"
+      }
+    },
+    "ledger": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp-servers/ledger-mcp/server.py"],
+      "env": {
+        "LEDGER_DB": "${LEDGER_DB:-}"
+      }
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp-servers/filesystem-mcp/server.py"],
+      "env": {
+        "CLIENTS_ROOT": "${CLIENTS_ROOT:-}",
+        "LEDGER_DB": "${LEDGER_DB:-}"
+      }
+    }
+  }
+}

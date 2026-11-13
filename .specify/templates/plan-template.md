@@ -30,8 +30,22 @@
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+*Source: `.specify/memory/constitution.md` v1.0.0. ("Phase 0/1" here are plan steps; "phase-N"
+below are the project's five delivery phases.)*
 
-[Gates determined based on constitution file]
+- [ ] **Phase gate**: this feature belongs to exactly one project phase (`/phase-N`), and the
+      previous phase's exit criteria are met.
+- [ ] **Scope**: file changes stay within `/phase-N`, `/shared`, `/tests` (and `/samples` for fake data).
+- [ ] **I. Human-in-the-loop**: output is a suggestion with status (ready / needs review / blocked);
+      nothing is posted to JR Taxi or any external system; approval is explicit and recorded.
+- [ ] **II. No invented codes**: every Konto/MK is validated in code against the SAF-T file
+      (and VAT validity date); uncertain values → empty + "needs review", never guessed.
+- [ ] **III. Balance**: debet = kredit enforced in code with Decimal/øre at every boundary.
+- [ ] **IV. Bank account (1930)**: only when present on the bank statement, using the bank's
+      booking date; reconciliation differences itemised, never netted.
+- [ ] **V. Fake data only**: fixtures in `/samples` are synthetic; no secrets or real data committed.
+- [ ] **Stack**: Python 3.13, OpenAI Agents SDK, Groq llama-3.3-70b; new dependencies justified.
+- [ ] **Exit criteria planned**: tests in `/tests/phase-N/` and a human-reviewable output defined.
 
 ## Project Structure
 
@@ -56,6 +70,12 @@ specs/[###-feature]/
 -->
 
 ```text
+# JR Taxi project (constitution v1.0.0) — use this layout:
+phase-N/          # only the current phase's folder
+shared/           # common code, models, config
+tests/phase-N/    # tests for this phase (mandatory)
+samples/          # fake sample SAF-T, documents, bank statements
+
 # [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
 src/
 ├── models/

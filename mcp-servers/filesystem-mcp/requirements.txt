@@ -1,0 +1,2 @@
+mcp>=1.9,<2
+# PDF text uses the document-reader skill's backends (pdftotext/pdfplumber/pypdf, optional OCR).

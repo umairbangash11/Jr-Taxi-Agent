@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jr-taxi-agent.local/phase-1/saft_data.schema.json",
+  "title": "Phase 1 SAF-T reference data (saft_data.json)",
+  "type": "object",
+  "required": ["summary", "accounts", "vat_codes", "suppliers", "supplier_account_map"],
+  "additionalProperties": false,
+  "$defs": {
+    "unknown": { "const": "unknown" },
+    "textOrUnknown": { "type": "string", "minLength": 1 },
+    "isoDateOrNull": { "oneOf": [{ "type": "null" }, { "type": "string", "format": "date" }] },
+    "account": {
+      "type": "object",
+      "required": ["id", "description", "standard_account_id"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "description": { "$ref": "#/$defs/textOrUnknown" },
+        "standard_account_id": { "$ref": "#/$defs/textOrUnknown" }
+      }
+    },
+    "vatCode": {
+      "type": "object",
+      "required": ["code", "percentage", "description", "standard_tax_code",
+                   "effective_date", "expiration_date", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "code": { "type": "string" },
+        "percentage": { "oneOf": [{ "type": "number", "minimum": 0, "maximum": 100 },
+                                  { "$ref": "#/$defs/unknown" }] },
+        "description": { "$ref": "#/$defs/textOrUnknown" },
+        "standard_tax_code": { "$ref": "#/$defs/textOrUnknown" },
+        "effective_date": { "$ref": "#/$defs/isoDateOrNull" },
+        "expiration_date": { "$ref": "#/$defs/isoDateOrNull" },
+        "source": { "enum": ["tax_table", "implicit"] }
+      },
+      "allOf": [{
+        "if": { "properties": { "source": { "const": "implicit" } } },
+        "then": { "properties": { "code": { "const": "" }, "percentage": { "const": 0 } } },
+        "else": { "properties": { "code": { "minLength": 1 } } }
+      }]
+    },
+    "supplier": {
+      "type": "object",
+      "required": ["id", "name", "registration_number", "in_master_data"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "$ref": "#/$defs/textOrUnknown" },
+        "registration_number": { "$ref": "#/$defs/textOrUnknown" },
+        "in_master_data": { "type": "boolean" }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "required": ["account_id", "account_description", "invoice_count", "share"],
+      "additionalProperties": false,
+      "properties": {
+        "account_id": { "type": "string", "pattern": "^[3-8]" },
+        "account_description": { "$ref": "#/$defs/textOrUnknown" },
+        "invoice_count": { "type": "integer", "minimum": 1 },
+        "share": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "mapping": {
+      "type": "object",
+      "required": ["supplier_id", "supplier_name", "account_id", "account_description", "share",
+                   "invoice_count", "candidates", "reason", "vat_codes_seen"],
+      "additionalProperties": false,
+      "properties": {
+        "supplier_id": { "type": "string", "minLength": 1 },
+        "supplier_name": { "$ref": "#/$defs/textOrUnknown" },
+        "account_id": { "oneOf": [{ "type": "string", "pattern": "^[3-8]" },
+                                  { "$ref": "#/$defs/unknown" }] },
+        "account_description": { "$ref": "#/$defs/textOrUnknown" },
+        "share": { "oneOf": [{ "type": "number", "minimum": 0.8, "maximum": 1 }, { "type": "null" }] },
+        "invoice_count": { "type": "integer", "minimum": 0 },
+        "candidates": { "type": "array", "items": { "$ref": "#/$defs/candidate" } },
+        "reason": { "oneOf": [{ "type": "null" },
+                              { "enum": ["no booking history", "ambiguous history",
+                                         "multiple accounts on the same invoices",
+                                         "no cost account on invoices"] }] },
+        "vat_codes_seen": { "type": "array", "items": { "type": "string" } }
+      },
+      "allOf": [{
+        "if": { "properties": { "account_id": { "const": "unknown" } } },
+        "then": { "properties": { "share": { "type": "null" }, "reason": { "type": "string" } } },
+        "else": { "properties": { "share": { "type": "number" }, "reason": { "type": "null" } } }
+      }]
+    }
+  },
+  "properties": {
+    "summary": {
+      "type": "object",
+      "required": ["source_file", "saft_version", "company_name", "company_registration_number",
+                   "period", "counts", "unknown_values", "skipped", "warnings"],
+      "properties": {
+        "source_file": { "type": "string" },
+        "saft_version": { "$ref": "#/$defs/textOrUnknown" },
+        "company_name": { "$ref": "#/$defs/textOrUnknown" },
+        "company_registration_number": { "$ref": "#/$defs/textOrUnknown" },
+        "period": { "type": "object" },
+        "counts": {
+          "type": "object",
+          "required": ["accounts", "vat_codes", "suppliers", "mapped_suppliers",
+                       "unknown_mappings", "transactions", "supplier_invoices"],
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "unknown_values": {
+          "type": "object",
+          "required": ["accounts", "vat_codes", "suppliers", "supplier_account_map"],
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "skipped": { "type": "array", "items": { "type": "string" } },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "accounts": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/account" } },
+    "vat_codes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/vatCode" } },
+    "suppliers": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/supplier" } },
+    "supplier_account_map": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/mapping" } }
+  }
+}

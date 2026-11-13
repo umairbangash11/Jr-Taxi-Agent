@@ -1,0 +1,34 @@
+{
+  "gl_accounts": [
+    {"id": "1920", "description": "Bankinnskudd"},
+    {"id": "2400", "description": "Leverandørgjeld"},
+    {"id": "2710", "description": "Inngående merverdiavgift"},
+    {"id": "6600", "description": "Reparasjon og vedlikehold"},
+    {"id": "7000", "description": "Drivstoff"},
+    {"id": "7140", "description": "Reisekostnad"}
+  ],
+  "vat_codes": [
+    {"code": "0", "percentage": null, "standard_tax_code": "0"},
+    {"code": "1", "percentage": 25, "standard_tax_code": "1"},
+    {"code": "11", "percentage": 15, "standard_tax_code": "11"},
+    {"code": "13", "percentage": 12, "standard_tax_code": "13"},
+    {"code": "3", "percentage": 25, "standard_tax_code": "3"},
+    {"code": "33", "percentage": 12, "standard_tax_code": "33"}
+  ],
+  "suppliers": [
+    {"id": "50010", "name": "Verksted Service AS", "registration_number": "912345602"},
+    {"id": "50001", "name": "Circle K Norge AS", "registration_number": "NO912345629MVA"},
+    {"id": "50020", "name": "Delt Leverandør AS", "registration_number": "987654384"}
+  ],
+  "supplier_account_mappings": [
+    {"supplier_id": "50010", "expense_accounts": [
+      {"account_id": "2710", "count": 5, "tax_codes": []},
+      {"account_id": "6600", "count": 5, "tax_codes": ["1"]}]},
+    {"supplier_id": "50001", "expense_accounts": [
+      {"account_id": "7000", "count": 8, "tax_codes": ["1"]},
+      {"account_id": "2710", "count": 8, "tax_codes": []}]},
+    {"supplier_id": "50020", "expense_accounts": [
+      {"account_id": "6600", "count": 3, "tax_codes": ["1"]},
+      {"account_id": "7000", "count": 3, "tax_codes": ["1"]}]}
+  ]
+}

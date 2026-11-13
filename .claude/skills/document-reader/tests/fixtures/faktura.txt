@@ -1,0 +1,24 @@
+Verksted Service AS                                  FAKTURA
+Industriveien 12
+0581 Oslo
+Org.nr: NO 912 345 602 MVA
+
+Faktura til:
+Taxi Drift AS
+Storgata 1
+0155 Oslo
+Kundens org.nr: 987 654 376
+
+Fakturanr: 2025-0417
+Fakturadato: 10.03.2025        Forfallsdato: 24.03.2025
+KID: 1234567890
+
+Beskrivelse                     Antall      Pris        Beløp
+Service bil EL 12345              1      4 000,00     4 000,00
+Dekkskift                         1        800,00       800,00
+
+Sum eks. mva                                          4 800,00
+MVA 25 %                                              1 200,00
+Å betale NOK                                          6 000,00
+
+Betales til kontonummer 1234.56.78903
