@@ -2,7 +2,7 @@ import pdfplumber
 import json
 
 # --- read the PDF ---
-with pdfplumber.open("samples/faktura_nio.pdf") as pdf:   # open the NIO invoice
+with pdfplumber.open("samples/kvittering_onepark.pdf") as pdf:   # open the NIO invoice
     text = pdf.pages[0].extract_text()                    # get all text from page 1
 
 lines = text.split("\n")                      # split text into a list of lines
@@ -49,7 +49,11 @@ for supplier in saft["supplier_account_map"]:   # go through learned suppliers
 
 # --- build the entry (bilag) ---
 debit_account = account                   # the expense account
-credit_account = "2400 Leverandørgjeld"   # supplier (unpaid invoice)
+
+if "Betalt" in text or "Kvittering" in text:   # paid already?
+    credit_account = "1930 Bank"                # yes → money left the bank
+else:
+    credit_account = "2400 Leverandørgjeld"     # no → we still owe supplier
 
 print("\n--- Suggested Entry ---")
 print(f"Debit : {debit_account}   {amount_number}")
@@ -68,3 +72,4 @@ else:
     status = "READY ✅  (account found, balanced)"
 
 print("\nStatus:", status)
+
