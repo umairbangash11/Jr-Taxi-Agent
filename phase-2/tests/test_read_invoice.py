@@ -23,3 +23,11 @@ def test_nio_invoice():
     assert result["debit_account"] == "7033"
     assert result["credit_account"] == "2400 Leverandørgjeld"
     assert result["amount"] == 2000.0
+
+
+def test_unknown_supplier_needs_review():
+    result = read_invoice("samples/faktura.pdf")
+
+    assert result["debit_account"] == "unknown"   # supplier not in Phase 1 data
+    assert result["status"] == "NEEDS REVIEW"            # so a human must check
+    assert result["amount"] == 6000.0              # 6 000,00 as a number
