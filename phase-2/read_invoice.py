@@ -51,6 +51,7 @@ def read_invoice(pdf_path):
         "vendor": vendor,
         "date": date,
         "amount": amount_number,
+        "vat": vat,
         "debit_account": account,
         "credit_account": credit_account,
         "status": status,
@@ -61,6 +62,7 @@ if __name__ == "__main__":
     result = read_invoice("samples/kvittering_onepark.pdf")
     print("Vendor:", result["vendor"])
     print("Date  :", result["date"])
+    print("VAT   :", result["vat"])
     print("Amount:", result["amount"])
     print("\n--- Suggested Entry ---")
     print(f"Debit : {result['debit_account']}   {result['amount']}")
