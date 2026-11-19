@@ -20,8 +20,9 @@ def test_nio_invoice():
     result = read_invoice("samples/faktura_nio.pdf")
 
     assert result["vendor"] == "NIO"
+    assert result["invoice_number"] == "2026-0555"
     assert result["debit_account"] == "7033"
-    assert result["credit_account"] == "2400 Leverandørgjeld"
+    assert result["credit_account"] == "50001 - NIO"         # known supplier
     assert result["amount"] == 2000.0
     assert result["vat"] == "MVA 25 % 400,00"
 
@@ -29,7 +30,8 @@ def test_nio_invoice():
 def test_unknown_supplier_needs_review():
     result = read_invoice("samples/faktura.pdf")
 
-    assert result["debit_account"] == "unknown"      # supplier not in Phase 1 data
-    assert result["status"] == "NEEDS REVIEW"        # so a human must check
-    assert result["amount"] == 6000.0                # 6 000,00 as a number
-    assert result["vat"] == "MVA 25 % 1 200,00"      # 25% VAT on a 6000 invoice
+    assert result["debit_account"] == "unknown"
+    assert result["credit_account"] == "2400 Leverandørgjeld"  # unknown supplier
+    assert result["status"] == "NEEDS REVIEW"
+    assert result["amount"] == 6000.0
+    assert result["vat"] == "MVA 25 % 1 200,00"

@@ -8,6 +8,15 @@ def read_invoice(pdf_path):
     with pdfplumber.open(pdf_path) as pdf:
         text = pdf.pages[0].extract_text()
 
+    if not text or not text.strip():
+        return {
+            "vendor": "", "date": "", "invoice_number": "",
+            "amount": 0.0, "vat": "",
+            "debit_account": "unknown", "supplier_id": "",
+            "credit_account": "",
+            "status": "NEEDS REVIEW: scanned document, no text",
+        }
+
     lines = text.split("\n")
     vendor = lines[0].replace("FAKTURA", "").replace("KVITTERING", "").strip()
 
@@ -16,6 +25,11 @@ def read_invoice(pdf_path):
         if "Fakturadato" in line:
             date = line.split("Forfallsdato")[0]
             date = date.replace("Fakturadato:", "").strip()
+
+    invoice_number = ""
+    for line in lines:
+        if "Fakturanr" in line:
+            invoice_number = line.replace("Fakturanr:", "").strip()
 
     amount = ""
     vat = ""
@@ -32,13 +46,17 @@ def read_invoice(pdf_path):
         saft = json.load(f)
 
     account = "unknown"
+    supplier_id = ""
     for supplier in saft["supplier_account_map"]:
         if supplier["supplier_name"] in vendor:
             account = supplier["account_id"]
+            supplier_id = supplier["supplier_id"]
             break
 
-    if "Betalt" in text or "Kvittering" in text:
+    if "KVITTERING" in text.upper():
         credit_account = "1930 Bank"
+    elif supplier_id:
+        credit_account = f"{supplier_id} - {vendor}"
     else:
         credit_account = "2400 Leverandørgjeld"
 
@@ -50,20 +68,23 @@ def read_invoice(pdf_path):
     return {
         "vendor": vendor,
         "date": date,
+        "invoice_number": invoice_number,
         "amount": amount_number,
         "vat": vat,
         "debit_account": account,
+        "supplier_id": supplier_id,
         "credit_account": credit_account,
         "status": status,
     }
 
 
 if __name__ == "__main__":
-    result = read_invoice("samples/kvittering_onepark.pdf")
-    print("Vendor:", result["vendor"])
-    print("Date  :", result["date"])
-    print("VAT   :", result["vat"])
-    print("Amount:", result["amount"])
+    result = read_invoice("samples/faktura_nio.pdf")
+    print("Vendor :", result["vendor"])
+    print("Date   :", result["date"])
+    print("Fakt.nr:", result["invoice_number"])
+    print("Amount :", result["amount"])
+    print("VAT    :", result["vat"])
     print("\n--- Suggested Entry ---")
     print(f"Debit : {result['debit_account']}   {result['amount']}")
     print(f"Credit: {result['credit_account']}   {result['amount']}")
