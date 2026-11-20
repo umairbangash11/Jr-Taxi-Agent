@@ -2,7 +2,7 @@ import pdfplumber
 import json
 
 
-def read_invoice(pdf_path):
+def read_invoice(pdf_path, saft_path="phase-1/saft_data.json"):
     """Read one invoice/receipt PDF and return a suggested bilag."""
 
     with pdfplumber.open(pdf_path) as pdf:
@@ -42,7 +42,7 @@ def read_invoice(pdf_path):
     amount_text = amount.split("NOK")[1].strip().replace(" ", "").replace(",", ".")
     amount_number = float(amount_text)
 
-    with open("phase-1/saft_data.json", encoding="utf-8") as f:
+    with open(saft_path, encoding="utf-8") as f:
         saft = json.load(f)
 
     account = "unknown"
