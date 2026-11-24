@@ -22,7 +22,7 @@ from xml.etree.ElementTree import ParseError, iterparse
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from shared.models import (UNKNOWN, Account, Candidate, Supplier,  # noqa: E402
-                           SupplierAccountMapping, VatCode)
+                           SupplierAccountMapping, SupplierVatAccountMapping, VatCode)
 
 NS = "urn:StandardAuditFile-Taxation-Financial:NO"
 SUPPORTED_VERSION = "1.30"
@@ -168,8 +168,11 @@ class _Reader:
         if net <= 0:
             return
         pl = [ln for ln in lines if is_pl_account(ln["account"])]
-        self.invoices.setdefault(supplier, []).append(
-            {"accounts": {ln["account"] for ln in pl}, "vat": {ln["mk"] for ln in pl}})
+        self.invoices.setdefault(supplier, []).append({
+            "accounts": {ln["account"] for ln in pl},
+            "vat": {ln["mk"] for ln in pl},
+            "vat_account_pairs": {(ln["account"], ln["mk"]) for ln in pl},
+        })
 
     # -- result ---------------------------------------------------------------
     def result(self, source_name):
@@ -192,6 +195,10 @@ class _Reader:
                               "supplier_invoices": sum(len(v) for v in self.invoices.values())},
                    "unknown_values": {}, "skipped": sorted(self.skipped),
                    "warnings": sorted(self.warnings)}
+        vat_mappings = []
+        for sid in sorted(self.suppliers, key=sort_key):
+            vat_mappings.extend(decide_vat_mappings(
+                sid, self.suppliers[sid].name, self.invoices.get(sid, []), descriptions))
         sections = {
             "accounts": [self.accounts[k].to_dict() for k in sorted(self.accounts, key=sort_key)],
             "vat_codes": [BLANK_VAT.to_dict()] + [c.to_dict() for c in vat],
@@ -201,7 +208,8 @@ class _Reader:
         }
         summary["unknown_values"] = {name: count_unknowns(items)
                                      for name, items in sections.items()}
-        return {"summary": summary, **sections}
+        return {"summary": summary, **sections,
+                "supplier_vat_account_map": [m.to_dict() for m in vat_mappings]}
 
 
 def count_unknowns(value):
@@ -255,6 +263,32 @@ def decide_mapping(supplier_id, supplier_name, invoices, descriptions):
     return SupplierAccountMapping(supplier_id, supplier_name, invoice_count=total,
                                   candidates=candidates, reason=reason,
                                   vat_codes_seen=vat_seen, **unknown)
+
+
+def decide_vat_mappings(supplier_id, supplier_name, invoices, descriptions):
+    """Return one SupplierVatAccountMapping per (supplier, vat_code) pair in the history.
+
+    For each VAT code, build a filtered invoice list (only lines with that code) and
+    apply the same ≥ 80 % rule as decide_mapping.
+    """
+    all_vat_codes = sorted({mk
+                            for inv in invoices
+                            for _, mk in inv.get("vat_account_pairs", set())})
+    result = []
+    for vat_code in all_vat_codes:
+        filtered = [
+            {"accounts": {acc for acc, mk in inv.get("vat_account_pairs", set()) if mk == vat_code},
+             "vat": set()}
+            for inv in invoices
+            if any(mk == vat_code for _, mk in inv.get("vat_account_pairs", set()))
+        ]
+        base = decide_mapping(supplier_id, supplier_name, filtered, descriptions)
+        result.append(SupplierVatAccountMapping(
+            supplier_id, supplier_name, vat_code,
+            base.account_id, base.account_description,
+            base.share, base.invoice_count, base.candidates, base.reason,
+        ))
+    return result
 
 
 HANDLERS = {("Header", "AuditFile"): "header",

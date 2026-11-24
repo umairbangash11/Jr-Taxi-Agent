@@ -9,8 +9,10 @@ def by_id(items, key="id"):
 
 def test_top_level_keys(sample_path):
     data = read_saft(sample_path)
-    assert list(data) == ["summary", "accounts", "vat_codes", "suppliers", "supplier_account_map"]
-    for section in ("accounts", "vat_codes", "suppliers", "supplier_account_map"):
+    assert list(data) == ["summary", "accounts", "vat_codes", "suppliers",
+                          "supplier_account_map", "supplier_vat_account_map"]
+    for section in ("accounts", "vat_codes", "suppliers", "supplier_account_map",
+                    "supplier_vat_account_map"):
         assert data[section], f"{section} is empty"
 
 

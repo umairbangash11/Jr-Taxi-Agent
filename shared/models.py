@@ -73,6 +73,27 @@ class Candidate:
 
 
 @dataclass(frozen=True)
+class SupplierVatAccountMapping:
+    supplier_id: str
+    supplier_name: str             # or UNKNOWN
+    vat_code: str
+    account_id: str                # or UNKNOWN
+    account_description: str       # or UNKNOWN
+    share: Decimal | None          # None when account_id is UNKNOWN
+    invoice_count: int
+    candidates: tuple = field(default_factory=tuple)
+    reason: str | None = None      # None when mapped
+
+    def to_dict(self):
+        return {"supplier_id": self.supplier_id, "supplier_name": self.supplier_name,
+                "vat_code": self.vat_code,
+                "account_id": self.account_id, "account_description": self.account_description,
+                "share": _num(self.share), "invoice_count": self.invoice_count,
+                "candidates": [c.to_dict() for c in self.candidates],
+                "reason": self.reason}
+
+
+@dataclass(frozen=True)
 class SupplierAccountMapping:
     supplier_id: str
     supplier_name: str             # or UNKNOWN
