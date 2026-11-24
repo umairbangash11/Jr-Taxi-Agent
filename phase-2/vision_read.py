@@ -36,6 +36,7 @@ def read_images(image_paths):
         max_tokens=700,                                        # a bit more room for the lines
         messages=[{"role": "user", "content": content}],
     )
+    print("finish_reason:", response.choices[0].finish_reason)
     return response.choices[0].message.content
 
 
